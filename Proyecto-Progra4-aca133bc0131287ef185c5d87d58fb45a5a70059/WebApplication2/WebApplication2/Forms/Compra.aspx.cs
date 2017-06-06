@@ -107,5 +107,29 @@ namespace WebApplication2.Forms
             LabelTotal.Text = totalizar(carrito).ToString();
 
         }
+
+        protected void Eliminar(object sender, GridViewDeleteEventArgs e)
+        {
+            int indice = e.RowIndex;
+            List<Producto> carrito = new List<Producto>();
+            carrito = (List<Producto>)Session["carrito"];
+            int contador = 0;
+            foreach (var item in carrito)
+            {
+               
+                if (contador==indice)
+                {
+                    carrito.Remove(item);
+                    break;
+
+                }
+                contador++;
+
+            }
+           
+            GridViewCarrito.DataSource = carrito;
+            GridViewCarrito.DataBind();
+            LabelTotal.Text = totalizar(carrito).ToString();
+        }
     }
 }

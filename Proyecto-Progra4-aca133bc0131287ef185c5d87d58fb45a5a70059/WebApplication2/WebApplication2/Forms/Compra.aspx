@@ -12,7 +12,7 @@
     </asp:Panel>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <asp:GridView ID="GridViewCarrito" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" OnSelectedIndexChanged="GridViewCarrito_SelectedIndexChanged">
+    <asp:GridView ID="GridViewCarrito" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" OnSelectedIndexChanged="GridViewCarrito_SelectedIndexChanged" OnRowDeleting="Eliminar">
         <AlternatingRowStyle BackColor="White" />
         <Columns>
             <asp:CommandField ButtonType="Button" SelectText="Cambiar cantidad"  ShowSelectButton="True" />
