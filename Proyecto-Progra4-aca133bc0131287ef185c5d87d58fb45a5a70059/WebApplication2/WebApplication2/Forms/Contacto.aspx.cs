@@ -25,12 +25,16 @@ namespace WebApplication2.Forms
                 {
                     PanelAdministracion.Visible = true;
                 }
+                else
+                {
+                    PanelAdministracion.Visible = false;
+                }
             }
         }
 
         protected void ButtonLogout_Click(object sender, EventArgs e)
         {
-            PanelLogin.Visible = false;
+            PanelBienvenida.Visible = false;
             PanelLogin.Visible = true;
             Session.Abandon();
         }
@@ -57,6 +61,14 @@ namespace WebApplication2.Forms
                 PanelLogin.Visible = false;
 
                 LabelBienvenido.Text = "Bienvenido " + user + " ";
+                if (usuario.Privilegio == true)
+                {
+                    Response.Redirect("~/Forms/MantenedorProductos.aspx");
+                }
+                else
+                {
+                    PanelAdministracion.Visible = false;
+                }
             }
             else
             {

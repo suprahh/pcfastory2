@@ -27,6 +27,10 @@ namespace WebApplication2.Forms
                 {
                     Response.Redirect("~/Forms/PrincipalAdministracion.aspx");
                 }
+                else
+                {
+                    PanelAdministracion.Visible = false;
+                }
             }
 
 
@@ -61,6 +65,10 @@ namespace WebApplication2.Forms
                 {
                     Response.Redirect("~/Forms/MantenedorProductos.aspx");
                 }
+                else
+                {
+                    PanelAdministracion.Visible = false;
+                }
             }
             else
             {
@@ -80,7 +88,7 @@ namespace WebApplication2.Forms
 
         protected void ButtonLogout_Click(object sender, EventArgs e)
         {
-            PanelLogin.Visible = false;
+            PanelBienvenida.Visible = false;
             PanelLogin.Visible = true;
             Session.Abandon();
         }

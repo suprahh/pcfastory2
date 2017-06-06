@@ -39,11 +39,7 @@ namespace WebApplication2.Forms
             }
         }
 
-        protected void ButtonLogout_Click(object sender, EventArgs e)
-        {
-          
-            Session.Abandon();
-        }
+    
 
         protected void ButtonAgregarProducto_Click(object sender, EventArgs e)
         {
@@ -199,6 +195,10 @@ namespace WebApplication2.Forms
            
         }
 
-      
+        protected void ButtonLogout_Click1(object sender, EventArgs e)
+        {
+            Session.Abandon();
+            Response.Redirect("~/Forms/Principal.aspx");
+        }
     }
 }

@@ -38,11 +38,7 @@ namespace WebApplication2
 
         }
 
-        protected void ButtonLogout_Click(object sender, EventArgs e)
-        {
-       
-            Session.Abandon();
-        }
+     
 
         protected void ButtonAgregarUsuario_Click(object sender, EventArgs e)
         {
@@ -128,6 +124,12 @@ namespace WebApplication2
         protected void Cancelar(object sender, DetailsViewModeEventArgs e)
         {
             Response.Redirect("~/Forms/MantenedorUsuarios.aspx");
+        }
+
+        protected void ButtonLogout_Click(object sender, EventArgs e)
+        {
+            Session.Abandon();
+            Response.Redirect("~/Forms/Principal.aspx");
         }
     }
 }

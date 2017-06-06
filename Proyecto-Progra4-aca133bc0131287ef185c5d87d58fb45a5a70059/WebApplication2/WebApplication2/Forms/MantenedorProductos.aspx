@@ -23,7 +23,7 @@
    
      <asp:Panel ID="PanelBienvenida" Visible="false"  runat="server">
         <asp:Label ID="LabelBienvenido" runat="server" Text=""></asp:Label>
-        <asp:Button ID="ButtonLogout" runat="server" Text="Cerrar Session" />
+        <asp:Button ID="ButtonLogout" runat="server" Text="Cerrar Session" OnClick="ButtonLogout_Click1" />
         <asp:Panel ID="PanelAdministracion" runat="server">
     <asp:HyperLink ID="HyperLinkMantenedorProducto" NavigateUrl="~/Forms/MantenedorProductos.aspx" runat="server">Mantenedor Productos</asp:HyperLink>
     <asp:HyperLink ID="HyperLinkMantenedorUsuario" NavigateUrl="~/Forms/MantenedorUsuarios.aspx" runat="server">Mantenedor Usuario</asp:HyperLink>

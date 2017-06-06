@@ -25,6 +25,11 @@ namespace WebApplication2.Forms
                 {
                     PanelAdministracion.Visible = true;
                 }
+                else
+                {
+                    PanelAdministracion.Visible = false;
+                }
+                   
             }
             if (Session["carrito"]!=null)
             {
