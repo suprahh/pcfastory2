@@ -1,0 +1,78 @@
+﻿body {
+    background-image : url(../FotosEstilo/liquid.jpg);
+}
+header
+{
+    width: 600px;
+    margin: 0 auto;
+    display:flex;
+    flex-direction: column;
+    
+}
+#divLogo
+{
+   display:flex;
+   justify-content:center;
+   background-image : url(../FotosEstilo/Logo.jpg);
+}
+#logo{
+    width:200px;
+}
+#slogan{
+    display:flex;
+    justify-content:center;
+    color: white;
+  
+}
+nav{
+    display:flex;
+    flex-direction:row;
+}
+#divMenu{
+    width: 600px;
+    text-align:center;
+}
+#menu{
+    list-style:none;
+    float:left;
+    text-align:center;
+}
+
+.liMenu {
+    width: 150px;
+    border: 2px solid #186BF2;
+    border-radius: 10px 10px;
+    background-color: #4689F4;
+    display:inline-block;
+    
+}
+.navegador {
+    color: antiquewhite;
+ 
+    text-decoration: none;
+}
+
+#divLogin{
+    width:600px;
+}
+
+#div{
+    color:white;
+    float:left;
+}
+
+#footer{
+    color:white;
+}
+
+#labelregistro{
+    color:white;
+}
+
+#cuadroData{
+    color:white;
+}
+
+#puser{
+    color:white;
+}
