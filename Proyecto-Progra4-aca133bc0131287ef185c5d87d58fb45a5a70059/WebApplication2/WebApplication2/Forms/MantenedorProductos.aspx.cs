@@ -59,10 +59,17 @@ namespace WebApplication2.Forms
                 if (DropDownListInfoProducto.SelectedValue == "4")
                 {
                     TextBoxBusquedaP.Visible = false;
+                    DropDownListCategoriasB.Visible = true; ;
+                }
+                else
+                {
+                    TextBoxBusquedaP.Visible = true ;
+                    DropDownListCategoriasB.Visible = false;
                 }
             }
             else
             {
+              
                 BusquedaProducto.Visible = false;
                 PanelMostrarProducto.Visible = false;
             }
@@ -117,6 +124,7 @@ namespace WebApplication2.Forms
                 case 1:
                     PanelProductoDataList.Visible = true;
                     PanelProductoEncontrado.Visible = false;
+                
                     GridViewProductosEncontrados.DataSource = Buscar.BproductoNombre(TextBoxBusquedaP.Text);
                     GridViewProductosEncontrados.DataBind();
                     break;
@@ -124,7 +132,7 @@ namespace WebApplication2.Forms
 
                     PanelProductoDataList.Visible = false;
                     PanelProductoEncontrado.Visible = true;
-
+                  
                     Producto p = Buscar.BproductoId(int.Parse(TextBoxBusquedaP.Text));
 
                     productos.Add(p);
@@ -134,6 +142,7 @@ namespace WebApplication2.Forms
                 case 3:
                     PanelProductoDataList.Visible = true;
                     PanelProductoEncontrado.Visible = false;
+          
                     GridViewProductosEncontrados.DataSource = Buscar.BproductoPrecio(int.Parse(TextBoxBusquedaP.Text));
                     GridViewProductosEncontrados.DataBind();
                     break;
@@ -141,7 +150,7 @@ namespace WebApplication2.Forms
                 case 4:
                     PanelProductoDataList.Visible = true;
                     PanelProductoEncontrado.Visible = false;
-
+  
                     GridViewProductosEncontrados.DataSource = Buscar.BproductoCategoria(DropDownListCategoriasB.SelectedValue);
                     GridViewProductosEncontrados.DataBind();
 
@@ -182,14 +191,14 @@ namespace WebApplication2.Forms
                 if (Modificar.modificarProducto(p) == true)
                 {
                     this.Page.Response.Write("<script language='JavaScript'>window.alert('se modificio con exito');</script>");
-                    return;
+                 
                 }
                 else
                 {
                     this.Page.Response.Write("<script language='JavaScript'>window.alert('no se modificio producto');</script>");
-                    Response.Redirect("~/Forms/MantenedorProductos.aspx");
+                  
                 }
-
+       
             }
             
            
@@ -199,6 +208,11 @@ namespace WebApplication2.Forms
         {
             Session.Abandon();
             Response.Redirect("~/Forms/Principal.aspx");
+        }
+
+        protected void CancelarModificacion(object sender, GridViewCancelEditEventArgs e)
+        {
+            Response.Redirect("~/Forms/MantenedorProductos.aspx");
         }
     }
 }

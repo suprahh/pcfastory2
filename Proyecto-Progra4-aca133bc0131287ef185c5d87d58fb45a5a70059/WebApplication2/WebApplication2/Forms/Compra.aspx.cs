@@ -10,26 +10,35 @@ namespace WebApplication2.Forms
 {
     public partial class Compra : System.Web.UI.Page
     {
+        public static int contador = 0;
         protected void Page_Load(object sender, EventArgs e)
-        {
-            if (Session["user"]!=null)
+        { 
+            if(!IsPostBack)
             {
-                Usuario user = (Usuario) Session["user"];
-                LabelBienvenido.Text = "bienvenido " + user.Nombre;
-            }
-            else
-            {
-                Response.Redirect("~/Forms/Principal.aspx");
-            }
-            if (Session["carrito"]!=null)
-            {
-                List<Producto> carrito = new List<Producto>();
-              carrito = (List<Producto>)Session["carrito"];
-                GridViewCarrito.DataSource = carrito;
-                GridViewCarrito.DataBind();
-                LabelTotal.Text += totalizar(carrito);
+                if (contador==0)
+                {
+                    if (Session["user"] != null)
+                    {
+                        Usuario user = (Usuario)Session["user"];
+                        LabelBienvenido.Text = "bienvenido " + user.Nombre;
+                    }
+                    else
+                    {
+                        Response.Redirect("~/Forms/Principal.aspx");
+                    }
+                    if (Session["carrito"] != null)
+                    {
+                        List<Producto> carrito = new List<Producto>();
+                        carrito = (List<Producto>)Session["carrito"];
+                        GridViewCarrito.DataSource = carrito;
+                        GridViewCarrito.DataBind();
+                        LabelTotal.Text += totalizar(carrito);
 
+                    }
+                    contador++;
+                }
             }
+           
            
             
         }
@@ -46,7 +55,7 @@ namespace WebApplication2.Forms
             int total = 0;
             foreach (var item in productos)
             {
-                total += item.Precio;
+                total += item.Precio * item.Stock;
             }
             return total;
         }
@@ -76,6 +85,27 @@ namespace WebApplication2.Forms
             }
             Response.Redirect("~/Forms/Boleta.aspx");
         }
-       
+
+        protected void GridViewCarrito_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Label ultracast1 = (Label)GridViewCarrito.SelectedRow.FindControl("LabelId");
+            int idProducto = int.Parse(ultracast1.Text);
+            TextBox ultracast = (TextBox)GridViewCarrito.SelectedRow.FindControl("TextBoxCantidad");
+            int cantidad = int.Parse(ultracast.Text);
+            List<Producto> carrito = new List<Producto>();
+            carrito = (List<Producto>)Session["carrito"];
+            foreach (var item in carrito)
+            {
+                if (item.Id == idProducto)
+                {
+                    item.Stock = cantidad;
+                }
+            }
+
+            GridViewCarrito.DataSource = carrito;
+            GridViewCarrito.DataBind();
+            LabelTotal.Text = totalizar(carrito).ToString();
+
+        }
     }
 }

@@ -37,7 +37,7 @@
         </div>
         <div>
             <asp:Label ID="Label5" runat="server" Text="Contraseña :"></asp:Label>
-            <asp:TextBox ID="TextBoxContraseña" runat="server"></asp:TextBox>
+            <asp:TextBox ID="TextBoxContraseña" TextMode="Password" runat="server"></asp:TextBox>
         </div>
         <div>
             <asp:Button ID="ButtonAgregarUsuario" runat="server" Text="Agregar" OnClick="ButtonAgregarUsuario_Click" />
@@ -64,6 +64,7 @@
             </asp:Panel>
         </div>
         <div>
+         <asp:Panel ID="PanelBusqueda" runat="server">
             <asp:DetailsView ID="DetailsViewUsuario" runat="server" Height="50px" Width="125px" AutoGenerateRows="False" BackColor="White" BorderColor="#E7E7FF" BorderStyle="None" BorderWidth="1px" CellPadding="3" GridLines="Horizontal" DefaultMode="Edit" OnItemUpdated="ModificarUsuario" OnItemUpdating="ModificaUsario" OnModeChanged="EditarUsuario" OnModeChanging="Cancelar">
                 <AlternatingRowStyle BackColor="#F7F7F7" />
                 <EditRowStyle BackColor="#738A9C" Font-Bold="True" ForeColor="#F7F7F7" />
@@ -84,6 +85,7 @@
                 <PagerStyle BackColor="#E7E7FF" ForeColor="#4A3C8C" HorizontalAlign="Right" />
                 <RowStyle BackColor="#E7E7FF" ForeColor="#4A3C8C" />
             </asp:DetailsView>
+             </asp:Panel>
         </div>
     </div>
 </asp:Content>

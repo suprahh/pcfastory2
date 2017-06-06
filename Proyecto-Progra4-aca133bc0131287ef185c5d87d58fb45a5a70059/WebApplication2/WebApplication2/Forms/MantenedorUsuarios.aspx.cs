@@ -71,16 +71,18 @@ namespace WebApplication2
         {
             PanelAgregarusuario.Visible = true;
             PanelBuscarUsuario.Visible = false;
+            PanelBusqueda.Visible = false;
         }
 
         protected void ButtonBuscarUsuario_Click1(object sender, EventArgs e)
         {
+
          Usuario user =    Buscar.BuscarUsuarioRut(Convert.ToInt32(TextBoxRutb.Text));
             List<Usuario> listaUser = new List<Usuario>();
             listaUser.Add(user);
             DetailsViewUsuario.DataSource = listaUser;
             DetailsViewUsuario.DataBind();
-
+            PanelBusqueda.Visible = true;
         }
 
         protected void EditarUsuario(object sender, EventArgs e)

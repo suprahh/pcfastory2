@@ -12,16 +12,22 @@
     </asp:Panel>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <asp:GridView ID="GridViewCarrito" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None">
+    <asp:GridView ID="GridViewCarrito" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" OnSelectedIndexChanged="GridViewCarrito_SelectedIndexChanged">
         <AlternatingRowStyle BackColor="White" />
         <Columns>
-            <asp:BoundField DataField="Id" HeaderText="Id" />
+            <asp:CommandField ButtonType="Button" SelectText="Cambiar cantidad"  ShowSelectButton="True" />
+            <asp:CommandField ButtonType="Button" ShowDeleteButton="True" />
+            <asp:TemplateField HeaderText="Id">
+                <ItemTemplate>
+                    <asp:Label ID="LabelId" runat="server" Text='<%# Bind("Id") %>'></asp:Label>
+                </ItemTemplate>
+            </asp:TemplateField>
             <asp:BoundField DataField="Nombre" HeaderText="Nombre" />
             <asp:BoundField DataField="Descripcion" HeaderText="Descripcion" />
             <asp:BoundField DataField="Precio" HeaderText="Precio" />
             <asp:TemplateField HeaderText="Cantidad">
                 <ItemTemplate>
-                    <asp:TextBox ID="TextBoxCantidad" Width="25px" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="TextBoxCantidad" Width="25px" runat="server" Text='<%# Bind("Stock") %>'></asp:TextBox>
                 </ItemTemplate>
             </asp:TemplateField>
             <asp:TemplateField HeaderText="Foto">

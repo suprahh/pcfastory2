@@ -49,8 +49,19 @@
                   <asp:Label ID="Label5" runat="server" Text="Foto : "></asp:Label>
                   <asp:FileUpload ID="FileUploadFoto" runat="server" /><br />
                   <asp:Label ID="Label6" runat="server" Text="Categoria : "></asp:Label>
-                  <asp:DropDownList ID="DropDownListCategoria" runat="server" AutoPostBack="True" DataSourceID="SqlDataSource1" DataTextField="NOM_CAT" DataValueField="ID_CAT"></asp:DropDownList>
-                  <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:PcfastoryConnectionString %>" SelectCommand="SELECT * FROM [TAB_CATEGORIA]"></asp:SqlDataSource>
+                  <asp:DropDownList ID="DropDownListCategoria" runat="server">
+                         <asp:ListItem Value="1">Tarjeta de video</asp:ListItem>
+                          <asp:ListItem Value="2">Placa madre</asp:ListItem>
+                          <asp:ListItem Value="3">Gabinete</asp:ListItem>
+                          <asp:ListItem Value="4">Procesador</asp:ListItem>
+                          <asp:ListItem Value="5">Memoria Ram</asp:ListItem>
+                          <asp:ListItem Value="6">Monitor</asp:ListItem>
+                          <asp:ListItem Value="7">SSD</asp:ListItem>
+                          <asp:ListItem Value="8">Fuente de poder</asp:ListItem>
+                          <asp:ListItem Value="9">Mouse</asp:ListItem>
+                          <asp:ListItem Value="10">Disco duro</asp:ListItem>
+                          <asp:ListItem Value="11">Cooler</asp:ListItem>
+                  </asp:DropDownList>
                   <br />
                   <asp:Button ID="ButtonInsertProducto" runat="server" Text="Agregar"  Width="117px" OnClick="ButtonInsertProducto_Click" /><br />
                   <asp:Label ID="LabelRespuestaAgregar" runat="server" Text=""></asp:Label>
@@ -76,7 +87,7 @@
                   <asp:Panel ID="BusquedaProducto" runat="server" Visible="false" CssClass="auto-style2">
                       <asp:Label ID="LabelTipoPro" runat="server" Text="Orden a dar : "></asp:Label> <asp:TextBox ID="TextBoxBusquedaP" runat="server"></asp:TextBox> <br /> <asp:DropDownList ID="DropDownListCategoriasB" runat="server" AutoPostBack="True">
                           <asp:ListItem Value="1">Tarjeta de video</asp:ListItem>
-                          <asp:ListItem Value="1">Placa madre</asp:ListItem>
+                          <asp:ListItem Value="2">Placa madre</asp:ListItem>
                           <asp:ListItem Value="3">Gabinete</asp:ListItem>
                           <asp:ListItem Value="4">Procesador</asp:ListItem>
                           <asp:ListItem Value="5">Memoria Ram</asp:ListItem>
@@ -88,9 +99,9 @@
                           <asp:ListItem Value="11">Cooler</asp:ListItem>
                       </asp:DropDownList> <br />
                       <asp:Button ID="ButtonBuscarP" runat="server" Text="Buscar" Width="211px" OnClick="ButtonBuscarP_Click" /><br />
-                      <asp:Label ID="LabelverNombre" runat="server" Text="aqui vemos si busco el producto"></asp:Label> <br />
+                     
                       <asp:Panel ID="PanelProductoDataList" Visible="false" runat="server">
-                          <asp:GridView ID="GridViewProductosEncontrados" runat="server" AutoGenerateColumns="False" BackColor="LightGoldenrodYellow" BorderColor="Tan" BorderWidth="1px" CellPadding="2" ForeColor="Black" GridLines="None" OnRowEditing="EdiatarProducto" OnRowUpdated="DatoEditado" OnRowUpdating="ModificarProducto" >
+                          <asp:GridView ID="GridViewProductosEncontrados" runat="server" AutoGenerateColumns="False" BackColor="LightGoldenrodYellow" BorderColor="Tan" BorderWidth="1px" CellPadding="2" ForeColor="Black" GridLines="None" OnRowEditing="EdiatarProducto" OnRowUpdated="DatoEditado" OnRowUpdating="ModificarProducto" OnRowCancelingEdit="CancelarModificacion" >
 
                               <AlternatingRowStyle BackColor="PaleGoldenrod" />
 
@@ -131,7 +142,9 @@
                           </asp:GridView>
                       </asp:Panel>
                       <asp:Panel ID="PanelProductoEncontrado" Visible="false" runat="server">
-                          <asp:DetailsView ID="DetailsViewProducto" runat="server" Height="50px" Width="125px" AutoGenerateRows="False"  >       
+                          <asp:DetailsView ID="DetailsViewProducto" runat="server" Height="50px" Width="125px" AutoGenerateRows="False" BackColor="LightGoldenrodYellow" BorderColor="Tan" BorderWidth="1px" CellPadding="2" ForeColor="Black" GridLines="None"  >       
+                              <AlternatingRowStyle BackColor="PaleGoldenrod" />
+                              <EditRowStyle BackColor="DarkSlateBlue" ForeColor="GhostWhite" />
                               <Fields>
                                   <asp:BoundField DataField="Nombre" HeaderText="Nombre" />
                                   <asp:BoundField DataField="Descripcion" HeaderText="Descripcion" />
@@ -143,12 +156,11 @@
                                       </ItemTemplate>
                                   </asp:TemplateField>
                                   <asp:BoundField DataField="IdCategoria" HeaderText="Id Categoria" />
-                                  <asp:TemplateField HeaderText="cantidad">
-                                      <ItemTemplate>
-                                          <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
-                                      </ItemTemplate>
-                                  </asp:TemplateField>
+                                 
                               </Fields>
+                               <FooterStyle BackColor="Tan" />
+                              <HeaderStyle BackColor="Tan" Font-Bold="True" />
+                              <PagerStyle BackColor="PaleGoldenrod" ForeColor="DarkSlateBlue" HorizontalAlign="Center" />
                                </asp:DetailsView>
                           </asp:Panel>
                  </asp:Panel>

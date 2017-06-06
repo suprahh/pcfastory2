@@ -47,17 +47,17 @@
   
     <div id="categoria">
         <ul>
-            <li>  <asp:HyperLink  ID="HyperLinkVideo" NavigateUrl="~/Forms/MantenedorProductos.aspx" runat="server">Tarjeta de Video</asp:HyperLink></li>
-             <li>  <asp:HyperLink  ID="HyperLinkPlaca" NavigateUrl="~/WebForm1.aspx" runat="server">Placa Madre</asp:HyperLink></li>
-             <li>  <asp:HyperLink ID="HyperLinkGabinetes" NavigateUrl="~/WebForm1.aspx" runat="server">Gabinetes</asp:HyperLink></li>
-             <li>  <asp:HyperLink ID="HyperLinkProcesador" NavigateUrl="~/WebForm1.aspx" runat="server">Procesador</asp:HyperLink></li>
-             <li>  <asp:HyperLink ID="HyperLinkRam" NavigateUrl="~/WebForm1.aspx" runat="server">Memoria RAM</asp:HyperLink></li>
-             <li>  <asp:HyperLink ID="HyperLinkMonitores" NavigateUrl="~/WebForm1.aspx" runat="server">Monitores</asp:HyperLink></li>
-             <li>  <asp:HyperLink ID="HyperLinkSSD" NavigateUrl="~/WebForm1.aspx" runat="server">Unidad de estado Solido (SSD)</asp:HyperLink></li>
-            <li>  <asp:HyperLink ID="HyperLinkFuente" NavigateUrl="~/WebForm1.aspx" runat="server">Fuente de poder</asp:HyperLink></li>
-            <li>  <asp:HyperLink ID="HyperLinkMouse" NavigateUrl="~/WebForm1.aspx" runat="server">Mouse</asp:HyperLink></li>
-            <li>  <asp:HyperLink ID="HyperLinkDisco" NavigateUrl="~/WebForm1.aspx" runat="server">Disco duro</asp:HyperLink></li>
-            <li>  <asp:HyperLink ID="HyperLinkCooler" NavigateUrl="~/WebForm1.aspx" runat="server">Cooler</asp:HyperLink></li>
+            <li>  <asp:HyperLink  ID="HyperLinkVideo" NavigateUrl="~/Forms/Productos.aspx"  runat="server">Tarjeta de Video</asp:HyperLink></li>
+             <li>  <asp:HyperLink  ID="HyperLinkPlaca" NavigateUrl="~/Forms/Productos.aspx" runat="server">Placa Madre</asp:HyperLink></li>
+             <li>  <asp:HyperLink ID="HyperLinkGabinetes" NavigateUrl="~/Forms/Productos.aspx" runat="server">Gabinetes</asp:HyperLink></li>
+             <li>  <asp:HyperLink ID="HyperLinkProcesador" NavigateUrl="~/Forms/Productos.aspx" runat="server">Procesador</asp:HyperLink></li>
+             <li>  <asp:HyperLink ID="HyperLinkRam" NavigateUrl="~/Forms/Productos.aspx" runat="server">Memoria RAM</asp:HyperLink></li>
+             <li>  <asp:HyperLink ID="HyperLinkMonitores" NavigateUrl="~/Forms/Productos.aspx" runat="server">Monitores</asp:HyperLink></li>
+             <li>  <asp:HyperLink ID="HyperLinkSSD" NavigateUrl="~/Forms/Productos.aspx" runat="server">Unidad de estado Solido (SSD)</asp:HyperLink></li>
+            <li>  <asp:HyperLink ID="HyperLinkFuente" NavigateUrl="~/Forms/Productos.aspx" runat="server">Fuente de poder</asp:HyperLink></li>
+            <li>  <asp:HyperLink ID="HyperLinkMouse" NavigateUrl="~/Forms/Productos.aspx" runat="server">Mouse</asp:HyperLink></li>
+            <li>  <asp:HyperLink ID="HyperLinkDisco" NavigateUrl="~/Forms/Productos.aspx" runat="server">Disco duro</asp:HyperLink></li>
+            <li>  <asp:HyperLink ID="HyperLinkCooler" NavigateUrl="~/Forms/Productos.aspx"  runat="server">Cooler</asp:HyperLink></li>
 
              
         </ul>

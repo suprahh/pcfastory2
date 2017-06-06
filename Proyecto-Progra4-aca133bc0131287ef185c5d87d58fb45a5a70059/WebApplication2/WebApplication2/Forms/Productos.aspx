@@ -36,7 +36,7 @@
     <div>
  <asp:DropDownList ID="DropDownListCategoriasB" runat="server" AutoPostBack="True" OnSelectedIndexChanged="DropDownListCategoriasB_SelectedIndexChanged">
                           <asp:ListItem Value="1">Tarjeta de video</asp:ListItem>
-                          <asp:ListItem Value="1">Placa madre</asp:ListItem>
+                          <asp:ListItem Value="2">Placa madre</asp:ListItem>
                           <asp:ListItem Value="3">Gabinete</asp:ListItem>
                           <asp:ListItem Value="4">Procesador</asp:ListItem>
                           <asp:ListItem Value="5">Memoria Ram</asp:ListItem>
@@ -54,9 +54,9 @@
                 <asp:BoundField HeaderText="Nombre" DataField="Nombre" />
                 <asp:BoundField HeaderText="Descripcion" DataField="Descripcion" />
                 <asp:BoundField HeaderText="Precio" DataField="Precio" />
-                <asp:TemplateField HeaderText="Unidades">
+                <asp:TemplateField  HeaderText="Unidades">
                     <ItemTemplate>
-                        <asp:TextBox ID="TextBoxUnidades" Width="20px"  runat="server"></asp:TextBox>
+                        <asp:TextBox ID="TextBoxUnidades" Width="20px" Text="1"  runat="server"></asp:TextBox>
                     </ItemTemplate>
                 </asp:TemplateField>
                 <asp:TemplateField  HeaderText="Foto">

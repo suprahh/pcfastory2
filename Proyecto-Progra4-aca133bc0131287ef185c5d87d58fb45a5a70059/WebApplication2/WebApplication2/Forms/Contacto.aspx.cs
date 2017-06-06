@@ -16,7 +16,7 @@ namespace WebApplication2.Forms
         {
             if (Session["user"] != null)
             {
-
+                
                 Usuario user = (Usuario)Session["user"];
                 LabelBienvenido.Text = "Bienvenido " + user.Username + " ";
                 PanelBienvenida.Visible = true;

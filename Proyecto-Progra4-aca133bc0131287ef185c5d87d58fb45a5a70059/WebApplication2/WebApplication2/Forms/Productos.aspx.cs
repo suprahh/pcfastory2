@@ -61,6 +61,14 @@ namespace WebApplication2.Forms
                 PanelLogin.Visible = false;
 
                 LabelBienvenido.Text = "Bienvenido " + user + " ";
+                if (usuario.Privilegio==true)
+                {
+                    PanelAdministracion.Visible= true;
+                }
+                else
+                {
+                    PanelAdministracion.Visible = false;
+                }
             }
             else
             {
@@ -82,6 +90,7 @@ namespace WebApplication2.Forms
         {
             PanelLogin.Visible = false;
             PanelLogin.Visible = true;
+            PanelAdministracion.Visible = false;
             Session.Abandon();
         }
 
@@ -96,6 +105,7 @@ namespace WebApplication2.Forms
 
         protected void GridViewProductos_SelectedIndexChanged(object sender, EventArgs e)
         {
+            
             List<Producto> carrito = new List<Producto>();
             if (Session["user"]==null)
             {
@@ -104,10 +114,14 @@ namespace WebApplication2.Forms
             else
             {
                 GridViewRow fila = GridViewProductos.SelectedRow;
-
+              
                int idProducto = Convert.ToInt32( GridViewProductos.DataKeys[fila.RowIndex].Value);
-                Producto p = Buscar.BproductoId(idProducto);
+               TextBox ultracast =(TextBox) GridViewProductos.SelectedRow.FindControl("TextBoxUnidades");
+                int cantidad =int.Parse( ultracast.Text);
 
+
+                Producto p = Buscar.BproductoId(idProducto);
+                p.Stock = cantidad;
                 if (Session["carrito"]==null)
                 {
                     carrito.Add(p);

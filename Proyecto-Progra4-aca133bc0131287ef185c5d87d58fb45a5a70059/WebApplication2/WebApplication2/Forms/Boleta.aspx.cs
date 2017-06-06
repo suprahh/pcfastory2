@@ -10,6 +10,8 @@ namespace WebApplication2.Forms
 {
     public partial class Boleta : System.Web.UI.Page
     {
+       
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -33,8 +35,8 @@ namespace WebApplication2.Forms
                 int total = 0;
                 foreach (var item in carrito)
                 {
-                    TextBoxBoleta.Text += item.Id + "             " + item.Nombre.Substring(0) + "                   " + item.Precio + "        " + item.Precio +"                   "+item.Id+ "\n";
-                     total += item.Precio; 
+                    TextBoxBoleta.Text += item.Id + "             " + item.Nombre.Substring(0) + "                   " + item.Stock + "        " + item.Precio +"                   "+item.Stock*item.Precio+ "\n";
+                     total += item.Precio*item.Stock; 
                 }
                 TextBoxBoleta.Text += "Total a Pagar                                                     $     " + total+"\n";
                 TextBoxBoleta.Text += "Cliente : " + user.Nombre + "  Rut :" + user.Rut;
