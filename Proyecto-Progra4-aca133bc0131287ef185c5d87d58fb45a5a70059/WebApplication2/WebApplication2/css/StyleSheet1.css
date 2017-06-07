@@ -8,7 +8,12 @@ header {
     display: flex;
     flex-direction: column;
 }
-
+.panelBusqueda {
+    float:left;
+   margin:3px 0 0 0;
+   top:400px;
+   position:absolute;
+}
 #divLogo {
     display: flex;
     justify-content: center;
@@ -28,12 +33,33 @@ nav {
     display: flex;
     flex-direction: row;
 }
+#contenedor1 {
+    overflow: hidden;
+}
 
 #divMenu {
     width: 600px;
     text-align: center;
+    float:left;
+    
+    
 }
+#categoria {
+    width: 200px;
+    margin: 0 auto auto 30px;
+    float: left;
+}
+#contenido {
+    width: 1300px;
+    margin: 0 auto;
+    float:right;
+}
+#barraNavegacion
+{
+    width:1200px;
+    margin: 0 auto;
 
+}
 #menu {
     list-style: none;
     float: left;
@@ -53,8 +79,10 @@ nav {
     text-decoration: none;
 }
 
+
 #divLogin {
     width: 600px;
+    float:right;
 }
 
 #div {
@@ -76,4 +104,33 @@ nav {
 
 #puser {
     color: white;
+}
+.categoriasM {
+    list-style:none;
+    text-align:center;
+    margin:0 0 4px 0;
+    width: 150px;
+    border: 2px solid #186BF2;
+    border-radius: 10px 10px;
+    background-color: #A830C0;
+}
+.saludo
+{
+    color: azure;
+    font: 600 20px italic;
+}
+
+#LabelDatos {
+    bottom: 5px;
+    position:fixed;
+}
+.foto{
+    width:200px;
+}
+.LabelTotal {
+    color: white;
+    background-color: #37A9FF ;
+   font-size: 30px;
+    border-radius: 10px;
+    border: solid 2px #4500F2;
 }

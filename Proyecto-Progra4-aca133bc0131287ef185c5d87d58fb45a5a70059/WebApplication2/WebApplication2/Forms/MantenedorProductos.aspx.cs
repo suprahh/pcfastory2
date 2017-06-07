@@ -45,7 +45,9 @@ namespace WebApplication2.Forms
         {
             PanelAgregarProducto.Visible = true;
             PanelMostrarProducto.Visible = false;
-
+            PanelProductoDataList.Visible = false;
+            PanelProductoEncontrado.Visible = false;
+            BusquedaProducto.Visible = false;
 
         }
 

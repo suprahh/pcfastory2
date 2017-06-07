@@ -3,7 +3,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolderCuadroLogin" runat="server">
     <asp:Panel ID="PanelBienvenida" Visible="false"  runat="server">
-        <asp:Label ID="LabelBienvenido" runat="server" Text=""></asp:Label>
+        <asp:Label CssClass="saludo" ID="LabelBienvenido" runat="server" Text=""></asp:Label>
         <asp:Button ID="ButtonLogout" runat="server" Text="Cerrar Session" OnClick="ButtonLogout_Click" />
         <asp:Panel ID="PanelAdministracion" runat="server">
     <asp:HyperLink ID="HyperLinkMantenedorProducto" NavigateUrl="~/Forms/MantenedorProductos.aspx" runat="server">Mantenedor Productos</asp:HyperLink>
@@ -32,7 +32,7 @@
             </asp:TemplateField>
             <asp:TemplateField HeaderText="Foto">
                 <ItemTemplate>
-                    <asp:Image ID="Image1" runat="server" ImageUrl='<%# Bind("Foto") %>' />
+                    <asp:Image CssClass="foto" ID="Image1" runat="server" ImageUrl='<%# Bind("Foto") %>' />
                 </ItemTemplate>
             </asp:TemplateField>
         </Columns>
@@ -47,6 +47,6 @@
         <SortedDescendingCellStyle BackColor="#E9EBEF" />
         <SortedDescendingHeaderStyle BackColor="#4870BE" />
     </asp:GridView>
-    <asp:Label ID="LabelTotal" BackColor="#0066ff" ForeColor="White" runat="server" Text="Total a pagar : "></asp:Label>
-    <asp:Button ID="ButtonPagar"  runat="server" Text="Pagar" OnClick="ButtonPagar_Click" />
+    <asp:Label ID="LabelTotal" CssClass="LabelTotal" runat="server" Text="Total a pagar : "></asp:Label>
+    <asp:Button ID="ButtonPagar"  runat="server" Text="Pagar" OnClick="ButtonPagar_Click" Height="24px" Width="232px" />
 </asp:Content>

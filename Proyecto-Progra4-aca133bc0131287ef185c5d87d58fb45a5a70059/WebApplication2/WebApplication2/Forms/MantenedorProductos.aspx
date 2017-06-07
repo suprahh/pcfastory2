@@ -22,7 +22,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolderCuadroLogin" runat="server">
    
      <asp:Panel ID="PanelBienvenida" Visible="false"  runat="server">
-        <asp:Label ID="LabelBienvenido" runat="server" Text=""></asp:Label>
+        <asp:Label CssClass="saludo" ID="LabelBienvenido" runat="server" Text=""></asp:Label>
         <asp:Button ID="ButtonLogout" runat="server" Text="Cerrar Session" OnClick="ButtonLogout_Click1" />
         <asp:Panel ID="PanelAdministracion" runat="server">
     <asp:HyperLink ID="HyperLinkMantenedorProducto" NavigateUrl="~/Forms/MantenedorProductos.aspx" runat="server">Mantenedor Productos</asp:HyperLink>
@@ -69,7 +69,7 @@
                    </asp:Panel> 
                   </td>
               <td class="auto-style4">
-                  <asp:Panel ID="PanelMostrarProducto" Visible="false" runat="server">
+                  <asp:Panel CssClass="panelBusqueda" ID="PanelMostrarProducto" Visible="false" runat="server">
                       <asp:Label ID="Label7" runat="server" Text="Buscar por : "></asp:Label>
                       <asp:DropDownList ID="DropDownListInfoProducto" runat="server" OnSelectedIndexChanged="DropDownListInfoProducto_SelectedIndexChanged" AutoPostBack="True">
                           <asp:ListItem Value="0">Selecciona una Opcion</asp:ListItem>
@@ -118,7 +118,7 @@
                                   <asp:BoundField DataField="Stock" HeaderText="Stock" />
                                   <asp:TemplateField HeaderText="Foto">
                                       <ItemTemplate>
-                                          <asp:Image ID="Image2" runat="server" ImageUrl='<%# Bind("Foto") %>' />
+                                          <asp:Image ID="Image2" CssClass="foto" runat="server" ImageUrl='<%# Bind("Foto") %>' />
                                       </ItemTemplate>
                                   </asp:TemplateField>
                                  
@@ -152,7 +152,7 @@
                                   <asp:BoundField DataField="Stock" HeaderText="Stock" />
                                   <asp:TemplateField HeaderText="Foto">
                                       <ItemTemplate>
-                                          <asp:Image ID="Image1" runat="server" ImageUrl='<%# Bind("Foto") %>' />
+                                          <asp:Image ID="Image1" CssClass="foto" runat="server" ImageUrl='<%# Bind("Foto") %>' />
                                       </ItemTemplate>
                                   </asp:TemplateField>
                                   <asp:BoundField DataField="IdCategoria" HeaderText="Id Categoria" />

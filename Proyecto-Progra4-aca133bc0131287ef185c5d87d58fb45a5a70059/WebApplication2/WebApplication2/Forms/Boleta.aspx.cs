@@ -21,6 +21,7 @@ namespace WebApplication2.Forms
                 carrito = (List<Producto>)Session["carrito"];
                 Usuario user = (Usuario)Session["user"];
                 Venta v = (Venta)Session["venta"];
+                
                 LabelBienvenida.Text = "bienvenido " + user.Nombre;
                 TextBoxBoleta.Text = "                                PcFastory S.A              \n";
                 TextBoxBoleta.Text +="Casa Matriz: Oscar Bonilla 10679,\n" +
@@ -35,7 +36,12 @@ namespace WebApplication2.Forms
                 int total = 0;
                 foreach (var item in carrito)
                 {
-                    TextBoxBoleta.Text += item.Id + "             " + item.Nombre.Substring(0) + "                   " + item.Stock + "        " + item.Precio +"                   "+item.Stock*item.Precio+ "\n";
+                    string nombre = string.Format("{0,-25}", item.Nombre);
+                    string stock = string.Format("{0,-10}", item.Stock);
+                    string precio = string.Format("{0,-15}", item.Precio);
+                    
+
+                    TextBoxBoleta.Text += item.Id + "             " +  nombre + " " +stock + " " + precio +" "+item.Stock*item.Precio+ "\n";
                      total += item.Precio*item.Stock; 
                 }
                 TextBoxBoleta.Text += "Total a Pagar                                                     $     " + total+"\n";

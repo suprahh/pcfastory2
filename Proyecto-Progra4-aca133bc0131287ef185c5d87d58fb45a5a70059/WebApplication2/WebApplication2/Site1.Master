@@ -24,6 +24,7 @@
              </header>
          </div>
     <nav>
+        <div id="barraNavegacion">
       <div id="divMenu">
         <ul id="menu">
          <li class="liMenu"> <asp:HyperLink CssClass="navegador" NavigateUrl="~/Forms/QuienesSomos.aspx" ID="HyperLinkQuienes" runat="server">¿Quienes Somos?</asp:HyperLink> </li>
@@ -37,37 +38,35 @@
 
             </asp:ContentPlaceHolder>
         </div>
-         
+       </div>  
     </nav>  
-   
-        <div>
+   <div id="contenedor1">
+        <div id="contenido">
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
         </div>
   
     <div id="categoria">
         <ul>
-            <li>  <asp:HyperLink  ID="HyperLinkVideo" NavigateUrl="~/Forms/Productos.aspx"  runat="server">Tarjeta de Video</asp:HyperLink></li>
-             <li>  <asp:HyperLink  ID="HyperLinkPlaca" NavigateUrl="~/Forms/Productos.aspx" runat="server">Placa Madre</asp:HyperLink></li>
-             <li>  <asp:HyperLink ID="HyperLinkGabinetes" NavigateUrl="~/Forms/Productos.aspx" runat="server">Gabinetes</asp:HyperLink></li>
-             <li>  <asp:HyperLink ID="HyperLinkProcesador" NavigateUrl="~/Forms/Productos.aspx" runat="server">Procesador</asp:HyperLink></li>
-             <li>  <asp:HyperLink ID="HyperLinkRam" NavigateUrl="~/Forms/Productos.aspx" runat="server">Memoria RAM</asp:HyperLink></li>
-             <li>  <asp:HyperLink ID="HyperLinkMonitores" NavigateUrl="~/Forms/Productos.aspx" runat="server">Monitores</asp:HyperLink></li>
-             <li>  <asp:HyperLink ID="HyperLinkSSD" NavigateUrl="~/Forms/Productos.aspx" runat="server">Unidad de estado Solido (SSD)</asp:HyperLink></li>
-            <li>  <asp:HyperLink ID="HyperLinkFuente" NavigateUrl="~/Forms/Productos.aspx" runat="server">Fuente de poder</asp:HyperLink></li>
-            <li>  <asp:HyperLink ID="HyperLinkMouse" NavigateUrl="~/Forms/Productos.aspx" runat="server">Mouse</asp:HyperLink></li>
-            <li>  <asp:HyperLink ID="HyperLinkDisco" NavigateUrl="~/Forms/Productos.aspx" runat="server">Disco duro</asp:HyperLink></li>
-            <li>  <asp:HyperLink ID="HyperLinkCooler" NavigateUrl="~/Forms/Productos.aspx"  runat="server">Cooler</asp:HyperLink></li>
+            <li class="categoriasM">  <asp:HyperLink  ID="HyperLinkVideo" CssClass="navegador"  NavigateUrl="~/Forms/Productos.aspx"  runat="server">Tarjeta de Video</asp:HyperLink></li>
+             <li class="categoriasM">  <asp:HyperLink  ID="HyperLinkPlaca" CssClass="navegador" NavigateUrl="~/Forms/Productos.aspx" runat="server">Placa Madre</asp:HyperLink></li>
+             <li class="categoriasM">  <asp:HyperLink ID="HyperLinkGabinetes" CssClass="navegador" NavigateUrl="~/Forms/Productos.aspx" runat="server">Gabinetes</asp:HyperLink></li>
+             <li class="categoriasM">  <asp:HyperLink ID="HyperLinkProcesador" CssClass="navegador" NavigateUrl="~/Forms/Productos.aspx" runat="server">Procesador</asp:HyperLink></li>
+             <li class="categoriasM">  <asp:HyperLink ID="HyperLinkRam" CssClass="navegador" NavigateUrl="~/Forms/Productos.aspx" runat="server">Memoria RAM</asp:HyperLink></li>
+             <li class="categoriasM">  <asp:HyperLink ID="HyperLinkMonitores" CssClass="navegador" NavigateUrl="~/Forms/Productos.aspx" runat="server">Monitores</asp:HyperLink></li>
+             <li class="categoriasM">  <asp:HyperLink ID="HyperLinkSSD" CssClass="navegador" NavigateUrl="~/Forms/Productos.aspx" runat="server">Unidad de estado Solido (SSD)</asp:HyperLink></li>
+            <li class="categoriasM">  <asp:HyperLink ID="HyperLinkFuente" CssClass="navegador" NavigateUrl="~/Forms/Productos.aspx" runat="server">Fuente de poder</asp:HyperLink></li>
+            <li class="categoriasM">  <asp:HyperLink ID="HyperLinkMouse" CssClass="navegador" NavigateUrl="~/Forms/Productos.aspx" runat="server">Mouse</asp:HyperLink></li>
+            <li class="categoriasM">  <asp:HyperLink ID="HyperLinkDisco" CssClass="navegador" NavigateUrl="~/Forms/Productos.aspx" runat="server">Disco duro</asp:HyperLink></li>
+            <li class="categoriasM">  <asp:HyperLink ID="HyperLinkCooler" CssClass="navegador" NavigateUrl="~/Forms/Productos.aspx"  runat="server">Cooler</asp:HyperLink></li>
 
              
         </ul>
     </div>
+       </div>
     <footer id="footer">
-        <div>
-            <h2>mostrar variable de session</h2>
-        </div>
-        <div>
-            <asp:Label ID="LabelDatos" runat="server" Text="Direccion, comuna, ciudad fono: 15211234501"></asp:Label>
+         <div>
+            <asp:Label ID="LabelDatos" runat="server" Text="Osca Bonilla #10679, La Florida, Santiago fono: 8562-4785-15"></asp:Label>
         </div>
     </footer>
  </form>

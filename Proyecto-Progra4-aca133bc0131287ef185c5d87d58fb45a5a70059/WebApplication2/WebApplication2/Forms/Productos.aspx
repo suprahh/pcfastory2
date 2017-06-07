@@ -21,7 +21,7 @@
   </div> 
     </asp:Panel>
     <asp:Panel ID="PanelBienvenida" Visible="false"  runat="server">
-        <asp:Label ID="LabelBienvenido" runat="server" Text=""></asp:Label>
+        <asp:Label ID="LabelBienvenido" CssClass="saludo" runat="server" Text=""></asp:Label>
         <asp:Button ID="ButtonLogout" runat="server" Text="Cerrar Session" OnClick="ButtonLogout_Click" />
         <asp:Panel ID="PanelAdministracion" runat="server">
     <asp:HyperLink ID="HyperLinkMantenedorProducto" NavigateUrl="~/Forms/MantenedorProductos.aspx" runat="server">Mantenedor Productos</asp:HyperLink>
@@ -61,7 +61,7 @@
                 </asp:TemplateField>
                 <asp:TemplateField  HeaderText="Foto">
                     <ItemTemplate>
-                        <asp:Image ID="Image1" runat="server" ImageUrl='<%# Bind("Foto") %>' />
+                        <asp:Image ID="Image1" CssClass="foto" runat="server" ImageUrl='<%# Bind("Foto") %>' />
                     </ItemTemplate>
                 </asp:TemplateField>
             </Columns>

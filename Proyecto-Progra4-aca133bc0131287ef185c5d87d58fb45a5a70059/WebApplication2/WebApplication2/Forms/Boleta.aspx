@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolderCuadroLogin" runat="server">
-    <asp:Label ID="LabelBienvenida" runat="server" Text="Label"></asp:Label>
+    <asp:Label CssClass="saludo" ID="LabelBienvenida" runat="server" Text="Label"></asp:Label>
      <asp:Button ID="ButtonLogout" runat="server" Text="Cerrar session" OnClick="ButtonLogout_Click" />
     <asp:Panel ID="PanelAdministracion" runat="server">
     <asp:HyperLink ID="HyperLinkMantenedorProducto" NavigateUrl="~/Forms/MantenedorProductos.aspx" runat="server">Mantenedor Productos</asp:HyperLink>
