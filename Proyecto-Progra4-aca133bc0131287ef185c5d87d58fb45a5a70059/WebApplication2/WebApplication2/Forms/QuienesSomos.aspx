@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="QuienesSomos.aspx.cs" Inherits="WebApplication2.Forms.QuienesSomos" %>
 <asp:Content ID="ContentHeader" ContentPlaceHolderID="head" runat="server">
-
+    <link href="../css/estiloQuienes.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolderCuadroLogin" runat="server">
      <asp:Panel ID="PanelLogin" runat="server">
@@ -30,4 +30,21 @@
     </asp:Panel>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <div class="quienes">
+    <p>PcFastory es una nueva empresa dirigida al rubro del armado
+    y soporte tecnico especializado en PC GAMERS, se enfoca en satisfacer
+    todas las necesidades de nuestros clientes, con el fin de generar lazos,
+    de confianza y servicio de calidad.
+    
+    MISION: PcFaStory tiene por mision ser la empresa de venta de HARDWARE
+    con mejor servicio de asistencia a los clientes, desde clientes
+    con pocos conocimientos tecnicos sobre las nuevas tecnologias, hasta
+    clientes que manejan ya un lenguaje tecnologico, con el fin de 
+    adaptarnos a todas las necesidades de los clientes.
+
+    VISION: Crecer como empresa a tal punto de ser la mejor en cuanto
+    a accebilididad para nuestros clientes, con la capacidad de proveer
+    de una eficiencia destacable para hacer el servicio mucho mas expedito</p>
+    
+</div>
 </asp:Content>

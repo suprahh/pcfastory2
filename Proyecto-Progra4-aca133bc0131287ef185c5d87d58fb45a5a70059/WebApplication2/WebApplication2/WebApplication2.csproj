@@ -72,6 +72,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="css\estiloQuienes.css" />
     <Content Include="css\StyleSheet1.css" />
     <Content Include="Forms\Boleta.aspx" />
     <Content Include="Forms\Compra.aspx" />

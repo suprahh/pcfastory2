@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Contacto.aspx.cs" Inherits="WebApplication2.Forms.Contacto" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <link href="../css/estiloQuienes.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolderCuadroLogin" runat="server">
       <asp:Panel ID="PanelLogin" runat="server">
@@ -29,4 +30,11 @@
     </asp:Panel>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <div class="quienes">
+    <p>ubicacion: La Florida #10679</p>
+    <p>Telefono: +56 8562-4785-15</p>
+    <p>Email: PcFastory.ss@faStory.cl</p>
+    <p>¡¡¡ Te Esperamos !!!</p>
+    
+</div>
 </asp:Content>
