@@ -259,6 +259,31 @@ namespace WebApplication2.App_Code
 
         }
 
-       
+        public static bool validarStock(int cantidad, int id)
+        {
+            Conexion cadena = new Conexion();
+            SqlConnection con = new SqlConnection(cadena.Conectar());
+            con.Open();
+            string consulta = "SELECT STOCK_PRO FROM TAB_PRODUCTO WHERE ID_PRO=" + id;
+            SqlDataAdapter conCadena = new SqlDataAdapter(consulta, con);
+            DataTable tabla = new DataTable();
+            conCadena.Fill(tabla);
+            int stockPro = 0;
+            foreach (DataRow row in tabla.Rows)
+            {
+                stockPro = (int)row[0];
+
+            }
+            if (stockPro<cantidad)
+            {
+                return false;
+            }
+            con.Close();
+            return true; ;
+
+        }
+
+
+
     }
 }

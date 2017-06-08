@@ -15,17 +15,23 @@ header {
    position:absolute;
 }
 #divLogo {
-    display: flex;
+   margin:0 auto;
     justify-content: center;
 }
-
+#marca {
+    text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
+    font-size: 45px;
+}
+#celdaProducto {
+   
+    overflow: hidden;
+}
 #logo {
     width: 200px;
 }
 
 #slogan {
-    display: flex;
-    justify-content: center;
+   text-align:center;
     color: white;
 }
 
@@ -45,12 +51,12 @@ nav {
     
 }
 #categoria {
-    width: 200px;
+    width: 180px;
     margin: 0 auto auto 30px;
     float: left;
 }
 #contenido {
-    width: 1300px;
+    width: 1110px;
     margin: 0 auto;
     float:right;
 }
@@ -99,17 +105,23 @@ nav {
 }
 
 #cuadroData {
+   
     color: white;
 }
-
+#dropSeleccion {
+display:block;
+}
 #puser {
     color: white;
+    text-align:center;
 }
 .categoriasM {
     list-style:none;
+    text-decoration:none;
+    color: white;
     text-align:center;
     margin:0 0 4px 0;
-    width: 150px;
+    width: 200px;
     border: 2px solid #186BF2;
     border-radius: 10px 10px;
     background-color: #A830C0;
@@ -133,4 +145,8 @@ nav {
    font-size: 30px;
     border-radius: 10px;
     border: solid 2px #4500F2;
+}
+.datosLogin{
+    display:inline-block;
+    width:150px;
 }

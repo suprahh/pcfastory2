@@ -34,18 +34,23 @@ namespace WebApplication2.Forms
                                      "Codigo        Articulo                  Cant       v.unit        Subtotal\n" +
                                      "------------------------------------------------------------------------------------\n";
                 int total = 0;
+               
+                
                 foreach (var item in carrito)
                 {
+                    string codigo = string.Format("{0,-13}", item.Id);
                     string nombre = string.Format("{0,-25}", item.Nombre);
                     string stock = string.Format("{0,-10}", item.Stock);
                     string precio = string.Format("{0,-15}", item.Precio);
+                    if (Modificar.modificarStock(item.Stock, item.Id))
                     
 
-                    TextBoxBoleta.Text += item.Id + "             " +  nombre + " " +stock + " " + precio +" "+item.Stock*item.Precio+ "\n";
+                    TextBoxBoleta.Text += codigo +" " +  nombre + " " +stock + " " + precio +" "+item.Stock*item.Precio+ "\n";
                      total += item.Precio*item.Stock; 
                 }
                 TextBoxBoleta.Text += "Total a Pagar                                                     $     " + total+"\n";
                 TextBoxBoleta.Text += "Cliente : " + user.Nombre + "  Rut :" + user.Rut;
+                TextBoxBoleta.Enabled = false;
 
             }
             else

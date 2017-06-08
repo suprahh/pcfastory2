@@ -40,6 +40,7 @@ namespace WebApplication2.Forms
         }
         protected void ButtonIngresar_Click(object sender, EventArgs e)
         {
+
             string user = TextBoxUsuario.Text;
             string contraseña = TextBoxContraseña.Text;
 
@@ -121,6 +122,11 @@ namespace WebApplication2.Forms
 
 
                 Producto p = Buscar.BproductoId(idProducto);
+                if (Buscar.validarStock(cantidad, p.Id)==false)
+                {
+                    this.Page.Response.Write("<script language='JavaScript'>window.alert('no hay suficiente stock para tu pedido');</script>");
+                    return;
+                }
                 p.Stock = cantidad;
                 if (Session["carrito"]==null)
                 {

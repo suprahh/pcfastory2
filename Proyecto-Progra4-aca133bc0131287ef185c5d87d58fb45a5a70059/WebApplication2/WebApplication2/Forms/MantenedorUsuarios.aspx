@@ -6,8 +6,8 @@
         <asp:Label ID="LabelBienvenido" CssClass="saludo" runat="server" Text=""></asp:Label>
         <asp:Button ID="ButtonLogout" runat="server" Text="Cerrar Session" OnClick="ButtonLogout_Click" />
         <asp:Panel ID="PanelAdministracion" runat="server">
-    <asp:HyperLink ID="HyperLinkMantenedorProducto" NavigateUrl="~/Forms/MantenedorProductos.aspx" runat="server">Mantenedor Productos</asp:HyperLink>
-    <asp:HyperLink ID="HyperLinkMantenedorUsuario" NavigateUrl="~/Forms/MantenedorUsuarios.aspx" runat="server">Mantenedor Usuario</asp:HyperLink>
+    <asp:HyperLink ID="HyperLinkMantenedorProducto" CssClass="categoriasM" NavigateUrl="~/Forms/MantenedorProductos.aspx" runat="server">Mantenedor Productos</asp:HyperLink>
+    <asp:HyperLink ID="HyperLinkMantenedorUsuario" CssClass="categoriasM" NavigateUrl="~/Forms/MantenedorUsuarios.aspx" runat="server">Mantenedor Usuario</asp:HyperLink>
      </asp:Panel>
     </asp:Panel>
 </asp:Content>

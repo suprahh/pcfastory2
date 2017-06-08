@@ -6,8 +6,8 @@
         <asp:Label CssClass="saludo" ID="LabelBienvenido" runat="server" Text=""></asp:Label>
         <asp:Button ID="ButtonLogout" runat="server" Text="Cerrar Session" OnClick="ButtonLogout_Click" />
         <asp:Panel ID="PanelAdministracion" runat="server">
-    <asp:HyperLink ID="HyperLinkMantenedorProducto" NavigateUrl="~/Forms/MantenedorProductos.aspx" runat="server">Mantenedor Productos</asp:HyperLink>
-    <asp:HyperLink ID="HyperLinkMantenedorUsuario" NavigateUrl="~/Forms/MantenedorUsuarios.aspx" runat="server">Mantenedor Usuario</asp:HyperLink>
+    <asp:HyperLink ID="HyperLinkMantenedorProducto" CssClass="categoriasM" NavigateUrl="~/Forms/MantenedorProductos.aspx" runat="server">Mantenedor Productos</asp:HyperLink>
+    <asp:HyperLink ID="HyperLinkMantenedorUsuario" CssClass="categoriasM" NavigateUrl="~/Forms/MantenedorUsuarios.aspx" runat="server">Mantenedor Usuario</asp:HyperLink>
      </asp:Panel>
     </asp:Panel>
 </asp:Content>
@@ -15,7 +15,7 @@
     <asp:GridView ID="GridViewCarrito" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" OnSelectedIndexChanged="GridViewCarrito_SelectedIndexChanged" OnRowDeleting="Eliminar">
         <AlternatingRowStyle BackColor="White" />
         <Columns>
-            <asp:CommandField ButtonType="Button" SelectText="Cambiar cantidad"  ShowSelectButton="True" />
+            <asp:CommandField ButtonType="Button" HeaderText="Modificar cantidad" SelectText="Cambiar cantidad"  ShowSelectButton="True" />
             <asp:CommandField ButtonType="Button" ShowDeleteButton="True" />
             <asp:TemplateField HeaderText="Id">
                 <ItemTemplate>

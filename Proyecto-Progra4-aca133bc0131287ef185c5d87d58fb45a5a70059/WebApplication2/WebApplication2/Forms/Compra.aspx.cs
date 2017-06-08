@@ -12,11 +12,9 @@ namespace WebApplication2.Forms
     {
         public static int contador = 0;
         protected void Page_Load(object sender, EventArgs e)
-        { 
-            if(!IsPostBack)
-            {
-                if (contador==0)
-                {
+        {
+            contador++;
+         
                     if (Session["user"] != null)
                     {
                         Usuario user = (Usuario)Session["user"];
@@ -26,21 +24,20 @@ namespace WebApplication2.Forms
                     {
                         Response.Redirect("~/Forms/Principal.aspx");
                     }
-                    if (Session["carrito"] != null)
-                    {
-                        List<Producto> carrito = new List<Producto>();
-                        carrito = (List<Producto>)Session["carrito"];
-                        GridViewCarrito.DataSource = carrito;
-                        GridViewCarrito.DataBind();
-                        LabelTotal.Text += totalizar(carrito);
+            if (contador<=1)
+            {
+                if (Session["carrito"] != null)
+                {
 
-                    }
-                    contador++;
+                    List<Producto> carrito = new List<Producto>();
+                    carrito = (List<Producto>)Session["carrito"];
+                    GridViewCarrito.DataSource = carrito;
+                    GridViewCarrito.DataBind();
+                    LabelTotal.Text = "Total a pagar :"+ totalizar(carrito).ToString();
+
                 }
             }
-           
-           
-            
+                   
         }
 
         protected void ButtonLogout_Click(object sender, EventArgs e)
@@ -88,23 +85,34 @@ namespace WebApplication2.Forms
 
         protected void GridViewCarrito_SelectedIndexChanged(object sender, EventArgs e)
         {
+            
             Label ultracast1 = (Label)GridViewCarrito.SelectedRow.FindControl("LabelId");
             int idProducto = int.Parse(ultracast1.Text);
             TextBox ultracast = (TextBox)GridViewCarrito.SelectedRow.FindControl("TextBoxCantidad");
             int cantidad = int.Parse(ultracast.Text);
             List<Producto> carrito = new List<Producto>();
             carrito = (List<Producto>)Session["carrito"];
+
             foreach (var item in carrito)
             {
+              
                 if (item.Id == idProducto)
                 {
+                    if (Buscar.validarStock(cantidad, item.Id) == false)
+                    {
+                        this.Page.Response.Write("<script language='JavaScript'>window.alert('no hay suficiente stock para tu pedido');</script>");
+                        GridViewCarrito.DataSource = carrito;
+                        GridViewCarrito.DataBind();
+
+                        return;
+                    }
                     item.Stock = cantidad;
                 }
             }
 
             GridViewCarrito.DataSource = carrito;
             GridViewCarrito.DataBind();
-            LabelTotal.Text = totalizar(carrito).ToString();
+            LabelTotal.Text ="Total a pagar :"+ totalizar(carrito).ToString();
 
         }
 
@@ -129,7 +137,7 @@ namespace WebApplication2.Forms
            
             GridViewCarrito.DataSource = carrito;
             GridViewCarrito.DataBind();
-            LabelTotal.Text = totalizar(carrito).ToString();
+            LabelTotal.Text ="Total a pagar :"+ totalizar(carrito).ToString();
         }
     }
 }

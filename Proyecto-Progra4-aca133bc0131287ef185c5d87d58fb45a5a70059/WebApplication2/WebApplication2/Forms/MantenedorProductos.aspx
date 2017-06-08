@@ -25,8 +25,8 @@
         <asp:Label CssClass="saludo" ID="LabelBienvenido" runat="server" Text=""></asp:Label>
         <asp:Button ID="ButtonLogout" runat="server" Text="Cerrar Session" OnClick="ButtonLogout_Click1" />
         <asp:Panel ID="PanelAdministracion" runat="server">
-    <asp:HyperLink ID="HyperLinkMantenedorProducto" NavigateUrl="~/Forms/MantenedorProductos.aspx" runat="server">Mantenedor Productos</asp:HyperLink>
-    <asp:HyperLink ID="HyperLinkMantenedorUsuario" NavigateUrl="~/Forms/MantenedorUsuarios.aspx" runat="server">Mantenedor Usuario</asp:HyperLink>
+    <asp:HyperLink ID="HyperLinkMantenedorProducto" CssClass="categoriasM" NavigateUrl="~/Forms/MantenedorProductos.aspx" runat="server">Mantenedor Productos</asp:HyperLink>
+    <asp:HyperLink ID="HyperLinkMantenedorUsuario" CssClass="categoriasM" NavigateUrl="~/Forms/MantenedorUsuarios.aspx" runat="server">Mantenedor Usuario</asp:HyperLink>
      </asp:Panel>
     </asp:Panel>
 </asp:Content>
@@ -49,7 +49,7 @@
                   <asp:Label ID="Label5" runat="server" Text="Foto : "></asp:Label>
                   <asp:FileUpload ID="FileUploadFoto" runat="server" /><br />
                   <asp:Label ID="Label6" runat="server" Text="Categoria : "></asp:Label>
-                  <asp:DropDownList ID="DropDownListCategoria" runat="server">
+                  <asp:DropDownList CssClass="dropSeleccion" ID="DropDownListCategoria" runat="server">
                          <asp:ListItem Value="1">Tarjeta de video</asp:ListItem>
                           <asp:ListItem Value="2">Placa madre</asp:ListItem>
                           <asp:ListItem Value="3">Gabinete</asp:ListItem>
@@ -83,7 +83,7 @@
 
                   </asp:Panel>
               </td>
-              <td> 
+              <td id="celdaProducto"> 
                   <asp:Panel ID="BusquedaProducto" runat="server" Visible="false" CssClass="auto-style2">
                       <asp:Label ID="LabelTipoPro" runat="server" Text="Orden a dar : "></asp:Label> <asp:TextBox ID="TextBoxBusquedaP" runat="server"></asp:TextBox> <br /> <asp:DropDownList ID="DropDownListCategoriasB" runat="server" AutoPostBack="True">
                           <asp:ListItem Value="1">Tarjeta de video</asp:ListItem>
